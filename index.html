@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>StreetCrave </title>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
   <header>
     <h1>StreetCrave - A crave-worthy log of global street eats.<img src="./images/globe.png" alt="globe icon"></h1>
     <p>Discover & share your favorite street foods from around the world</p>
-
   </header>
+
   <main class="container">
     <section id="post-list" class="sidebar">
       <!-- List of food titles with thumbnails will be injected here -->
@@ -22,30 +23,23 @@
     </section>
   </main>
 
-  <section class="form-section">
-    <h3>Add a New StreetDish</h3>
-    <form id="new-post-form">
+
+  <section>
+    <!--add a dish button to display the hidden form -->
+  <button id="toggle-form-btn"><img src="./images/plus.png" alt="cart icon"> Add New Dish</button>
+  <!--hidden form-->
+  <div  id="add-post-form-container">
+  <h3><em>Add a New StreetDish</em></h3>
+    <form id="add-post-form">
       <input type="text" name="name" placeholder="Dish Name" required />
       <input type="text" name="origin" placeholder="Country of Origin" required />
       <input type="url" name="imageUrl" placeholder="Image URL" required />
       <textarea name="description" rows="4" placeholder="Describe the dish..." required></textarea>
       <label for="spiceLevel">Spice Level (1-5):</label>
       <input type="number" name="spiceLevel" min="1" max="5" />
-      <button type="submit">Add StreetDish</button>
+      <button type="submit">Add The StreetDish</button>
     </form>
-  </section>
-
-  <form id="edit-post-form" class="hidden edit-form">
-    <h4>Update Post Details</h4>
-    <label for="edit-title">Title:</label>
-    <input type="text" name="title" id="edit-title" required />
-    
-    <label for="edit-content">Content:</label>
-    <textarea name="content" id="edit-content" rows="5" required></textarea>
-
-    <button type="submit">Update Post</button>
-    <button type="button" id="cancel-edit">Cancel</button>
-  </form>
-
+  </div>
+</section>
 </body>
 </html>
