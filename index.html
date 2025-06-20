@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreetCrave </title>
+</head>
+<body>
+  <header>
+    <h1>StreetCrave - A crave-worthy log of global street eats.<img src="./images/globe.png" alt="globe icon"></h1>
+    <p>Discover & share your favorite street foods from around the world</p>
+
+  </header>
+  <main class="container">
+    <section id="post-list" class="sidebar">
+      <!-- List of food titles with thumbnails will be injected here -->
+    </section>
+
+    <section id="post-detail" class="detail">
+      <h2>Select a dish to view its details <img src="./images/eat.png" alt="plate"></h2>
+      <!-- Post details (image, name, origin, description, spice level) go here -->
+    </section>
+  </main>
+
+  <section class="form-section">
+    <h3>Add a New StreetDish</h3>
+    <form id="new-post-form">
+      <input type="text" name="name" placeholder="Dish Name" required />
+      <input type="text" name="origin" placeholder="Country of Origin" required />
+      <input type="url" name="imageUrl" placeholder="Image URL" required />
+      <textarea name="description" rows="4" placeholder="Describe the dish..." required></textarea>
+      <label for="spiceLevel">Spice Level (1-5):</label>
+      <input type="number" name="spiceLevel" min="1" max="5" />
+      <button type="submit">Add StreetDish</button>
+    </form>
+  </section>
+
+  <form id="edit-post-form" class="hidden edit-form">
+    <h4>Update Post Details</h4>
+    <label for="edit-title">Title:</label>
+    <input type="text" name="title" id="edit-title" required />
+    
+    <label for="edit-content">Content:</label>
+    <textarea name="content" id="edit-content" rows="5" required></textarea>
+
+    <button type="submit">Update Post</button>
+    <button type="button" id="cancel-edit">Cancel</button>
+  </form>
+
+</body>
+</html>
