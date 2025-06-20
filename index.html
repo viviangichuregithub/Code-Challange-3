@@ -3,43 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StreetCrave </title>
+  <title>StreetCrave</title>
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
   <header>
-    <h1>StreetCrave - A crave-worthy log of global street eats.<img src="./images/globe.png" alt="globe icon"></h1>
+    <h1>
+      StreetCrave - A crave-worthy log of global street eats
+      <img src="./images/globe.png" alt="globe icon">
+    </h1>
     <p>Discover & share your favorite street foods from around the world</p>
   </header>
 
-  <main class="container">
-    <section id="post-list" class="sidebar">
-      <!-- List of food titles with thumbnails will be injected here -->
-    </section>
+  <!-- Add Dish Button -->
+  <section id="add-button-section">
+    <button id="toggle-form-btn">
+      <img src="./images/plus.png" alt="plus icon"> Add New Dish
+    </button>
+  </section>
 
-    <section id="post-detail" class="detail">
-      <h2>Select a dish to view its details <img src="./images/eat.png" alt="plate"></h2>
-      <!-- Post details (image, name, origin, description, spice level) go here -->
-    </section>
-  </main>
-
-
-  <section>
-    <!--add a dish button to display the hidden form -->
-  <button id="toggle-form-btn"><img src="./images/plus.png" alt="cart icon"> Add New Dish</button>
-  <!--hidden form-->
-  <div  id="add-post-form-container">
-  <h3><em>Add a New StreetDish</em></h3>
+  <!-- Add Dish Form (hidden by default, toggle with button) -->
+  <section id="add-post-form-container" style="display: none;">
+    <h3><em>Add a New StreetDish</em></h3>
     <form id="add-post-form">
+      <select name="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Meat Dishes">Meat Dishes</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Desserts">Desserts</option>
+        <option value="Other">Other</option>
+      </select>
       <input type="text" name="name" placeholder="Dish Name" required />
       <input type="text" name="origin" placeholder="Country of Origin" required />
       <input type="url" name="imageUrl" placeholder="Image URL" required />
       <textarea name="description" rows="4" placeholder="Describe the dish..." required></textarea>
       <label for="spiceLevel">Spice Level (1-5):</label>
-      <input type="number" name="spiceLevel" min="1" max="5" />
+      <input type="number" name="spiceLevel" min="1" max="5" required />
       <button type="submit">Add The StreetDish</button>
     </form>
-  </div>
-</section>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    <!-- Sidebar: Will be filled with categories by JS -->
+    <aside id="sidebar">
+      <h2>Categories</h2>
+      <ul id="category-list">
+        <!-- JS will inject .category-item here -->
+      </ul>
+    </aside>
+
+    <!-- Dish Detail Area -->
+    <section id="post-detail">
+      <h2>One of the best street food to take  
+        <img src="./images/eat.png" alt="plate icon">
+      </h2>
+      <!-- JS will inject full dish card here -->
+      <div id="dish-display"></div>
+    </section>
+  </main>
+
+  <script src="./js/index.js"></script>
 </body>
 </html>

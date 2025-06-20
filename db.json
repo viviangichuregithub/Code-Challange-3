@@ -1,0 +1,22 @@
+{
+  "dishes": [
+    {
+      "id": 1,
+      "category": "Snacks",
+      "name": "Samosa",
+      "origin": "Kenya",
+      "imageUrl": "images/samosa.jpg",
+      "description": "A triangular snack with spiced meat or vegetables",
+      "spiceLevel": 3
+    },
+    {
+      "id": 2,
+      "category": "Drinks",
+      "name": "Chai",
+      "origin": "India",
+      "imageUrl": "images/chai.jpg",
+      "description": "Spiced milk tea popular in South Asia",
+      "spiceLevel": 1
+    }
+  ]
+}
