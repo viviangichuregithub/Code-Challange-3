@@ -5,18 +5,45 @@
       "category": "Snacks",
       "name": "Samosa",
       "origin": "Kenya",
-      "imageUrl": "images/samosa.jpg",
-      "description": "A triangular snack with spiced meat or vegetables",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1695297516676-04a259917c03?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2Ftb3NhfGVufDB8fDB8fHww",
+      "description": "A triangular pastry filled with spiced meat or vegetables.",
       "spiceLevel": 3
     },
     {
       "id": 2,
       "category": "Drinks",
-      "name": "Chai",
+      "name": "Bubble Tea",
+      "origin": "Taiwan",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1664298216218-ff8dfd7719ac?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnViYmxlJTIwdGVhfGVufDB8fDB8fHww",
+      "description": "Sweet tea with chewy tapioca pearls, served cold.",
+      "spiceLevel": 0
+    },
+    {
+      "id": 3,
+      "category": "Meat Dishes",
+      "name": "Tacos al Pastor",
+      "origin": "Mexico",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1681406995086-e60e5c306e6c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VGFjb3MlMjBhbCUyMFBhc3RvcnxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Pork tacos marinated in spices, served with pineapple.",
+      "spiceLevel": 4
+    },
+    {
+      "id": 4,
+      "category": "Desserts",
+      "name": "Churros",
+      "origin": "Spain",
+      "imageUrl": "https://media.istockphoto.com/id/157693206/photo/churros.webp?a=1&b=1&s=612x612&w=0&k=20&c=3zgycCiE381kYJhgOtKya_J5l7hJmH0f8ElHo2dA-Fo=",
+      "description": "Fried dough sticks rolled in cinnamon sugar.",
+      "spiceLevel": 0
+    },
+    {
+      "id": 5,
+      "category": "Vegetarian",
+      "name": "Chaat",
       "origin": "India",
-      "imageUrl": "images/chai.jpg",
-      "description": "Spiced milk tea popular in South Asia",
-      "spiceLevel": 1
+      "imageUrl": "https://media.istockphoto.com/id/1191064450/photo/seet-and-salty-papdi-chaat.webp?a=1&b=1&s=612x612&w=0&k=20&c=zapscwiEoeXfhv0GJq5TXzQ7tkmxSXYd9KMr26VCrjM=",
+      "description": "A Snack with Potatoes,Chickpeas,and Chutneys.",
+      "spiceLevel": 4
     }
   ]
 }
