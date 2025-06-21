@@ -1,32 +1,32 @@
-/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body and Fonts */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fffaf6;
-  color: #333;
   line-height: 1.6;
-  padding: 20px;
+  background-color: whitesmoke;
+  color: #333;
+  padding: 1rem;
 }
 
-/* Header */
-header {
-  background: #ff7043;
-  color: white;
-  padding: 20px;
-  padding-left: 0%;
-  border-radius: 12px;
+/*  Header  */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color:#ffe0b2;
+  padding: 8px;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,161 +34,210 @@ header h1 {
 }
 
 header h1 img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
 }
 
 header p {
-  font-style: italic;
-  font-size: 1rem;
-  margin-top: 10px;
+  color: orangered;
+  margin-top: 0.5rem;
 }
 
-/* Container Layout */
-.container {
+/* Add Button */
+#add-button-section {
+  text-align: center;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 100px; /* leaves space for the sticky header */
+  z-index: 999;
+  padding: 10px 0;
+}
+
+#toggle-form-btn {
+  z-index: 1000;
+  z-index: 1000;
+  background-color: orangered; ;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
   display: flex;
-  gap: 20px;
-  margin-top: 30px;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
+
+#toggle-form-btn:hover {
+  background-color:orange;
+}
+
+#toggle-form-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/*  Form  */
+#add-post-form-container {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+#add-post-form h3 {
+  margin-bottom: 1rem;
+}
+
+#add-post-form input,
+#add-post-form select,
+#add-post-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#add-post-form button[type="submit"] {
+  background-color: orangered;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#add-post-form button[type="submit"]:hover {
+  background-color:orange;
+}
+
+/*  Main Layout  */
+main.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* Sidebar */
 #sidebar {
+  position: sticky;
+  top: 160px; /* space for header + button */
   flex: 1;
   background: #ffe0b2;
   padding: 20px;
-  border-radius: 12px;
   height: fit-content;
-  max-height: 80vh;
+  max-height: calc(100vh - 160px);
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
 
 #sidebar h2 {
-  margin-bottom: 10px;
-  color: #ff7043;
-}
-
-#category-list {
-  list-style: none;
+  margin-bottom: 1rem;
+  color: orange;
 }
 
 .category-item {
-  padding: 10px 15px;
-  margin: 8px 0;
-  background: #fff3e0;
-  border-radius: 8px;
+  list-style: none;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: background 0.3s;
 }
 
 .category-item:hover {
-  background: #ffcc80;
-  transform: scale(1.02);
+  background-color: #ddd;
 }
 
-/* Dish Detail */
+/* === Post Detail === */
 #post-detail {
-  flex: 3;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 112, 67, 0.2);
+  flex: 3 1 600px;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
 }
 
 #post-detail h2 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
-  color: #ff7043;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-#post-detail img {
-  width: 24px;
-  height: 24px;
+#post-detail h2 img {
+  width: 30px;
+  height: 30px;
 }
 
-#dish-display {
+/* === Dish Cards === */
+.dish-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Add Button */
-#toggle-form-btn {
-  background: #ff7043;
-  color: white;
-  padding: 12px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  margin: 30px auto 20px;
-  display: block;
-  transition: background 0.3s ease;
-}
-
-#toggle-form-btn:hover {
-  background: #bf360c;
-}
-
-#toggle-form-btn img {
-  width: 20px;
-}
-
-/* Form Styling */
-#add-post-form-container {
-  background: #fff3e0;
-  padding: 20px;
+.dish-card {
+  background: #fefefe;
+  padding: 1rem;
   border-radius: 12px;
-  max-width: 600px;
-  margin: 20px auto;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
 }
 
-#add-post-form h3 {
-  margin-bottom: 10px;
+.dish-card:hover {
+  transform: translateY(-5px);
 }
 
-#add-post-form input,
-#add-post-form textarea,
-#add-post-form select {
+.dish-img {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
 }
 
-#add-post-form button {
-  background: #ff7043;
-  color: white;
-  padding: 10px 16px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s ease;
+.dish-info h3 {
+  font-size: 1.2rem;
+  color: orange ;
+  margin-bottom: 0.5rem;
 }
 
-#add-post-form button:hover {
-  background: #f4511e;
+.dish-info p {
+  margin-bottom: 0.4rem;
 }
+.spice-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+
+
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
-  .container {
+  main.container {
     flex-direction: column;
   }
 
-  #toggle-form-btn {
-    width: 90%;
+  #sidebar {
+    order: 2;
   }
 
-  #dish-display {
-    grid-template-columns: 1fr;
+  #post-detail {
+    order: 1;
   }
 }

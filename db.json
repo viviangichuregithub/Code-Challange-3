@@ -1,7 +1,7 @@
 {
   "dishes": [
     {
-      "id": 1,
+      "id": "1",
       "category": "Snacks",
       "name": "Samosa",
       "origin": "Kenya",
@@ -10,7 +10,7 @@
       "spiceLevel": 3
     },
     {
-      "id": 2,
+      "id": "2",
       "category": "Drinks",
       "name": "Bubble Tea",
       "origin": "Taiwan",
@@ -19,7 +19,7 @@
       "spiceLevel": 0
     },
     {
-      "id": 3,
+      "id": "3",
       "category": "Meat Dishes",
       "name": "Tacos al Pastor",
       "origin": "Mexico",
@@ -28,7 +28,7 @@
       "spiceLevel": 4
     },
     {
-      "id": 4,
+      "id": "4",
       "category": "Desserts",
       "name": "Churros",
       "origin": "Spain",
@@ -37,13 +37,103 @@
       "spiceLevel": 0
     },
     {
-      "id": 5,
+      "id": "5",
       "category": "Vegetarian",
       "name": "Chaat",
       "origin": "India",
       "imageUrl": "https://media.istockphoto.com/id/1191064450/photo/seet-and-salty-papdi-chaat.webp?a=1&b=1&s=612x612&w=0&k=20&c=zapscwiEoeXfhv0GJq5TXzQ7tkmxSXYd9KMr26VCrjM=",
       "description": "A Snack with Potatoes,Chickpeas,and Chutneys.",
       "spiceLevel": 4
+    },
+    {
+      "id": "1",
+      "category": "Snacks",
+      "name": "Mutura",
+      "origin": "Kenya",
+      "imageUrl": "https://swahilivillage.wordpress.com/wp-content/uploads/2012/12/muturakach.jpg",
+      "description": "Chopped meat put inside animal intestines then grilled.",
+      "spiceLevel": 2
+    },
+    {
+      "id": "7",
+      "category": "Snacks",
+      "name": "Mutura",
+      "origin": "Kenya",
+      "imageUrl": "https://swahilivillage.wordpress.com/wp-content/uploads/2012/12/muturakach.jpg",
+      "description": "Chopped meat put inside animal intestines then grilled.",
+      "spiceLevel": 2
+    },
+    {
+      "id": "a4e3",
+      "category": "Drinks",
+      "name": "Ukwaju ",
+      "origin": "Kenya",
+      "imageUrl": "https://img-global.cpcdn.com/recipes/6b59b6ca0bee179f/1360x1928cq90/tamarind-juice-ukwaju-recipe-main-photo.webp",
+      "description": "It is a smothie made from ukwaju plant",
+      "spiceLevel": 1
+    },
+    {
+      "id": "380c",
+      "category": "Snacks",
+      "name": "Mabuyu",
+      "origin": "Kenya",
+      "imageUrl": "https://i.etsystatic.com/54929940/r/il/0ebdfd/6356766727/il_1588xN.6356766727_8rb3.jpg",
+      "description": "Sweetened baobab",
+      "spiceLevel": 1
+    },
+    {
+      "id": "ee7b",
+      "category": "Snacks",
+      "name": "Kashata",
+      "origin": "Kenya",
+      "imageUrl": "https://i.etsystatic.com/54929940/r/il/dab764/6309310380/il_1588xN.6309310380_qi98.jpg",
+      "description": "This are sugarand color cotted mango strips ",
+      "spiceLevel": 1
+    },
+    {
+      "id": "1df8",
+      "category": "Desserts",
+      "name": "Jalebi",
+      "origin": "India",
+      "imageUrl": "https://thumbs.dreamstime.com/b/jalebi-indian-sweet-x-zalebia-78582930.jpg?w=768",
+      "description": "It's a crispy, deep-fried coil or pretzel-shaped confection, typically made from all-purpose flour and then soaked in a fragrant sugar syrup.",
+      "spiceLevel": 1
+    },
+    {
+      "id": "cc31",
+      "category": "Desserts",
+      "name": "Motichoor laddu",
+      "origin": "India",
+      "imageUrl": "https://thumbs.dreamstime.com/z/pile-indian-sweets-motichoor-laddu-laddoo-71498478.jpg?ct=jpeg",
+      "description": "a spherical sweet from the Indian subcontinent made of various ingredients and sugar syrup or jaggery",
+      "spiceLevel": 0
+    },
+    {
+      "id": "9868",
+      "category": "Meat Dishes",
+      "name": "Sri Lankan Chicken Curry",
+      "origin": "Sri lanka",
+      "imageUrl": "https://www.hungrylankan.com/wp-content/uploads/2021/01/20210109_142907_compress1-1152x1536.jpg.webp",
+      "description": "A flavorful and aromatic dish known for its rich, spicy, and often tangy taste",
+      "spiceLevel": 2
+    },
+    {
+      "id": "61d8",
+      "category": "Vegetarian",
+      "name": "Mbuzi Choma",
+      "origin": "Kenya",
+      "imageUrl": "https://thumbs.dreamstime.com/z/antony-trivet-food-photographers-based-nairobi-city-county-kenya-mbuzi-nyama-choma-goat-roasted-meat-grill-287182718.jpg?ct=jpeg",
+      "description": "Grilled Goat Meat ",
+      "spiceLevel": 0
+    },
+    {
+      "id": "a0b1",
+      "category": "Desserts",
+      "name": "Cantucci",
+      "origin": "Italy",
+      "imageUrl": "https://aseasyasapplepie.com/wp-content/uploads/cantucci-1.jpg",
+      "description": "Traditional Tuscan almond biscuits characterized by their twice-baked, crunchy texture.",
+      "spiceLevel": 0
     }
   ]
 }
