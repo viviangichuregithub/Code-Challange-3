@@ -9,10 +9,10 @@
 <body>
   <header>
     <h1>
-      StreetCrave - A crave-worthy log of global street eats
+      <em> A crave-worthy log of global street eats</em>
       <img src="./images/globe.png" alt="globe icon">
     </h1>
-    <p>Discover & share your favorite street foods from around the world</p>
+    <p><em>Discover & share your favorite street foods from around the world</em></p>
   </header>
 
   <!-- Add Dish Button -->
@@ -27,7 +27,7 @@
     <h3><em>Add a New StreetDish</em></h3>
     <form id="add-post-form">
       <select name="category" required>
-        <option value="">-- Select Category --</option>
+        <option value="" disabled selected>--Select Category--</option>
         <option value="Snacks">Snacks</option>
         <option value="Drinks">Drinks</option>
         <option value="Meat Dishes">Meat Dishes</option>
@@ -39,7 +39,7 @@
       <input type="text" name="origin" placeholder="Country of Origin" required />
       <input type="url" name="imageUrl" placeholder="Image URL" required />
       <textarea name="description" rows="4" placeholder="Describe the dish..." required></textarea>
-      <label for="spiceLevel">Spice Level (1-5):</label>
+      <label for="spiceLevel">Spice Level (1-5) and If Sweet Input (0) : </label>
       <input type="number" name="spiceLevel" min="0" max="5" required />
       <button type="submit">Add The StreetDish</button>
     </form>
@@ -50,7 +50,7 @@
     
     <!-- Sidebar: Will be filled with categories by JS -->
     <aside id="sidebar">
-      <h2>Categories</h2>
+      <h2><em>Categories</em></h2>
       <ul id="category-list">
         <!-- JS will inject .category-item here -->
       </ul>
@@ -58,7 +58,7 @@
 
     <!-- Dish Detail Area -->
     <section id="post-detail">
-      <h2>One of the best street food to take  
+      <h2><em>One of the best street food to take </em>
         <img src="./images/eat.png" alt="plate icon">
       </h2>
       <!-- JS will inject full dish card here -->

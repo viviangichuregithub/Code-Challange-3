@@ -1,15 +1,6 @@
 {
   "dishes": [
     {
-      "id": "1",
-      "category": "Snacks",
-      "name": "Samosa",
-      "origin": "Kenya",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1695297516676-04a259917c03?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2Ftb3NhfGVufDB8fDB8fHww",
-      "description": "A triangular pastry filled with spiced meat or vegetables.",
-      "spiceLevel": 3
-    },
-    {
       "id": "2",
       "category": "Drinks",
       "name": "Bubble Tea",
@@ -19,15 +10,6 @@
       "spiceLevel": 0
     },
     {
-      "id": "3",
-      "category": "Meat Dishes",
-      "name": "Tacos al Pastor",
-      "origin": "Mexico",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1681406995086-e60e5c306e6c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VGFjb3MlMjBhbCUyMFBhc3RvcnxlbnwwfHwwfHx8MA%3D%3D",
-      "description": "Pork tacos marinated in spices, served with pineapple.",
-      "spiceLevel": 4
-    },
-    {
       "id": "4",
       "category": "Desserts",
       "name": "Churros",
@@ -35,51 +17,6 @@
       "imageUrl": "https://media.istockphoto.com/id/157693206/photo/churros.webp?a=1&b=1&s=612x612&w=0&k=20&c=3zgycCiE381kYJhgOtKya_J5l7hJmH0f8ElHo2dA-Fo=",
       "description": "Fried dough sticks rolled in cinnamon sugar.",
       "spiceLevel": 0
-    },
-    {
-      "id": "5",
-      "category": "Vegetarian",
-      "name": "Chaat",
-      "origin": "India",
-      "imageUrl": "https://media.istockphoto.com/id/1191064450/photo/seet-and-salty-papdi-chaat.webp?a=1&b=1&s=612x612&w=0&k=20&c=zapscwiEoeXfhv0GJq5TXzQ7tkmxSXYd9KMr26VCrjM=",
-      "description": "A Snack with Potatoes,Chickpeas,and Chutneys.",
-      "spiceLevel": 4
-    },
-    {
-      "id": "1",
-      "category": "Snacks",
-      "name": "Mutura",
-      "origin": "Kenya",
-      "imageUrl": "https://swahilivillage.wordpress.com/wp-content/uploads/2012/12/muturakach.jpg",
-      "description": "Chopped meat put inside animal intestines then grilled.",
-      "spiceLevel": 2
-    },
-    {
-      "id": "7",
-      "category": "Snacks",
-      "name": "Mutura",
-      "origin": "Kenya",
-      "imageUrl": "https://swahilivillage.wordpress.com/wp-content/uploads/2012/12/muturakach.jpg",
-      "description": "Chopped meat put inside animal intestines then grilled.",
-      "spiceLevel": 2
-    },
-    {
-      "id": "a4e3",
-      "category": "Drinks",
-      "name": "Ukwaju ",
-      "origin": "Kenya",
-      "imageUrl": "https://img-global.cpcdn.com/recipes/6b59b6ca0bee179f/1360x1928cq90/tamarind-juice-ukwaju-recipe-main-photo.webp",
-      "description": "It is a smothie made from ukwaju plant",
-      "spiceLevel": 1
-    },
-    {
-      "id": "380c",
-      "category": "Snacks",
-      "name": "Mabuyu",
-      "origin": "Kenya",
-      "imageUrl": "https://i.etsystatic.com/54929940/r/il/0ebdfd/6356766727/il_1588xN.6356766727_8rb3.jpg",
-      "description": "Sweetened baobab",
-      "spiceLevel": 1
     },
     {
       "id": "ee7b",
@@ -100,15 +37,6 @@
       "spiceLevel": 1
     },
     {
-      "id": "cc31",
-      "category": "Desserts",
-      "name": "Motichoor laddu",
-      "origin": "India",
-      "imageUrl": "https://thumbs.dreamstime.com/z/pile-indian-sweets-motichoor-laddu-laddoo-71498478.jpg?ct=jpeg",
-      "description": "a spherical sweet from the Indian subcontinent made of various ingredients and sugar syrup or jaggery",
-      "spiceLevel": 0
-    },
-    {
       "id": "9868",
       "category": "Meat Dishes",
       "name": "Sri Lankan Chicken Curry",
@@ -118,15 +46,6 @@
       "spiceLevel": 2
     },
     {
-      "id": "61d8",
-      "category": "Vegetarian",
-      "name": "Mbuzi Choma",
-      "origin": "Kenya",
-      "imageUrl": "https://thumbs.dreamstime.com/z/antony-trivet-food-photographers-based-nairobi-city-county-kenya-mbuzi-nyama-choma-goat-roasted-meat-grill-287182718.jpg?ct=jpeg",
-      "description": "Grilled Goat Meat ",
-      "spiceLevel": 0
-    },
-    {
       "id": "a0b1",
       "category": "Desserts",
       "name": "Cantucci",
@@ -134,6 +53,87 @@
       "imageUrl": "https://aseasyasapplepie.com/wp-content/uploads/cantucci-1.jpg",
       "description": "Traditional Tuscan almond biscuits characterized by their twice-baked, crunchy texture.",
       "spiceLevel": 0
+    },
+    {
+      "id": "a92b",
+      "category": "Meat Dishes",
+      "name": "Mbuzi Choma",
+      "origin": "Kenya",
+      "imageUrl": "https://thumbs.dreamstime.com/z/antony-trivet-food-photographers-based-nairobi-city-county-kenya-mbuzi-nyama-choma-goat-roasted-meat-grill-287182718.jpg?ct=jpeg",
+      "description": "Grilled Goat Meat",
+      "spiceLevel": 0
+    },
+    {
+      "id": "38f0",
+      "category": "Snacks",
+      "name": "Motichoor laddu",
+      "origin": "India",
+      "imageUrl": "https://thumbs.dreamstime.com/z/pile-indian-sweets-motichoor-laddu-laddoo-71498478.jpg?ct=jpeg",
+      "description": "A spherical sweet from the Indian subcontinent made of various ingredients and sugar syrup or jaggery",
+      "spiceLevel": 0
+    },
+    {
+      "id": "aaa3",
+      "category": "Snacks",
+      "name": "Mabuyu",
+      "origin": "Kenya",
+      "imageUrl": "https://i.etsystatic.com/54929940/r/il/0ebdfd/6356766727/il_1588xN.6356766727_8rb3.jpg",
+      "description": "Candy made from the seeds of the baobab fruit.",
+      "spiceLevel": 0
+    },
+    {
+      "id": "0bb2",
+      "category": "Drinks",
+      "name": "Ukwaju ",
+      "origin": "Kenya",
+      "imageUrl": "https://img-global.cpcdn.com/recipes/6b59b6ca0bee179f/1360x1928cq90/tamarind-juice-ukwaju-recipe-main-photo.webp",
+      "description": "It is a smothie made from ukwaju plant",
+      "spiceLevel": 0
+    },
+    {
+      "id": "6a19",
+      "category": "Meat Dishes",
+      "name": "Tacos al Pastor",
+      "origin": "Mexico",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1681406995086-e60e5c306e6c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VGFjb3MlMjBhbCUyMFBhc3RvcnxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Pork tacos marinated in spices, served with pineapple.",
+      "spiceLevel": 2
+    },
+    {
+      "id": "6a62",
+      "category": "Drinks",
+      "name": "Chicha",
+      "origin": "Peru",
+      "imageUrl": "https://c7.alamy.com/comp/M50K5W/peruvian-purple-corn-drink-chicha-morada-purple-sweet-traditional-M50K5W.jpg",
+      "description": "A traditional beverage often made from fermented maize. ",
+      "spiceLevel": 1
+    },
+    {
+      "id": "aff6",
+      "category": "Vegetarian",
+      "name": "Falafel",
+      "origin": "Egypt",
+      "imageUrl": "https://feelgoodfoodie.net/wp-content/uploads/2024/03/Falafel-16.jpg",
+      "description": "Deep-fried ball or patty-shaped fritter",
+      "spiceLevel": 0
+    },
+    {
+      "id": "b0c1",
+      "category": "Vegetarian",
+      "name": "Gado gado",
+      "origin": "Indonesia",
+      "imageUrl": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gado-gado-salad-876c31a.jpg?quality=90&webp=true&resize=440,400",
+      "description": "Salad known for its combination of steamed or blanched vegetables, fried tofu and tempeh, and a rich, spicy peanut sauce.",
+      "spiceLevel": 2
+    },
+    {
+      "id": "ae88",
+      "category": "Vegetarian",
+      "name": "Caldo Verde",
+      "origin": "Portugual",
+      "imageUrl": "https://www.seriouseats.com/thmb/T4vpRnJBtEm1S4vbVFHlO8671cw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/caldo-verde-portuguese-potato-kale-soup-recipe-hero-04-80f8258a58694f78a7ad6629ba55f90e.jpg",
+      "description": "Potato and Kale Soup With Sausage",
+      "spiceLevel": 1
     }
   ]
 }

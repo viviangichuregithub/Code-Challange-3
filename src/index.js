@@ -18,9 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.innerHTML = isHidden
       ? '<img src="./images/hidden.png" alt="eye closed icon"> Hide Form'
       : '<img src="./images/plus.png" alt="plus icon"> Add New Dish';
+
+       if (isHidden) {
+       setTimeout(() => {
+       const yOffset = -100; // adjust based on your sticky header height
+      const y = formContainer.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+     }, 100);
+  }
   });
 
-  // === FORM SUBMISSION HANDLER ===
+  // FORM SUBMISSION HANDLER 
   addPostForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -74,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // === RENDER ALL DISHES GROUPED BY CATEGORY ===
+  // RENDER ALL DISHES GROUPED BY CATEGORY 
   function renderDishList(dishes) {
     display.innerHTML = "";
     const categoryMap = {};
@@ -119,8 +127,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="dish-info">
             <h3>${dish.name}</h3>
             <p><strong>Origin:</strong> ${dish.origin}</p>
+            <p><strong>Flavor Intensity :</strong> ${spiceImage}</p>
             <p>${dish.description}</p>
-           <p><strong>Spice:</strong> ${spiceImage}</p>
+           <div class="card-buttons">
+           <button class="edit-btn" data-id="${dish.id}">Edit</button>
+           <button class="delete-btn" data-id="${dish.id}">Delete</button>
+           </div>
           </div>
         `;
 
@@ -131,6 +143,33 @@ document.addEventListener("DOMContentLoaded", () => {
       display.appendChild(section);
     });
   }
+
+
+   // ✅ DELETE HANDLER inside DOMContentLoaded
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+      const dishId = e.target.dataset.id;
+
+      if (confirm("Are you sure you want to delete this dish?")) {
+        fetch(`http://localhost:3000/dishes/${dishId}`, {
+          method: "DELETE",
+        })
+          .then((res) => {
+            if (res.status === 200 || res.status === 204) {
+              allDishes = allDishes.filter((dish) => dish.id != dishId);
+              renderDishList(allDishes);
+              alert("Dish deleted successfully!");
+            } else {
+              throw new Error(`Unexpected response: ${res.status}`);
+            }
+          })
+          .catch((err) => {
+            console.error("Delete error:", err);
+            alert("Failed to delete dish. Please try again.");
+          });
+      }
+    }
+  });
 
   // FILTER DISHES BY A SPECIFIC CATEGORY 
   function filterDishesByCategory(category) {
@@ -158,3 +197,5 @@ document.addEventListener("DOMContentLoaded", () => {
       categoryList.prepend(allBtn);
     });
 });
+
+
