@@ -1,4 +1,4 @@
-# Dish Management App 
+# Dish Management Website
 
 A modern and interactive web application that allows users to manage a collection of dishes , add new dishes, view them by category, edit their details, and delete them. This app communicates with a local JSON server and updates the DOM dynamically.
 
@@ -66,7 +66,7 @@ http://localhost:3000/dishes
 -Edit or delete dishes using the provided buttons.
 
 ## Author
--Vivian Gichure
+**Vivian Gichure**
 -Frontend Developer | Project Lead
 -Email: viviangichure@example.com
 -GitHub: https://github.com/viviangichuregithub/Code-Challange-3
