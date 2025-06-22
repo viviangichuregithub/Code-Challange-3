@@ -68,5 +68,5 @@ http://localhost:3000/dishes
 ## Author
 Vivian Gichure
 Frontend Developer | Project Lead
-Email: [viviangichure@example.com]
-GitHub: [https://github.com/viviangichuregithub/Code-Challange-3]
+Email: viviangichure@example.com
+GitHub: https://github.com/viviangichuregithub/Code-Challange-3
