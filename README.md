@@ -66,7 +66,7 @@ http://localhost:3000/dishes
 -Edit or delete dishes using the provided buttons.
 
 ## Author
-Vivian Gichure
-Frontend Developer | Project Lead
-Email: viviangichure@example.com
-GitHub: https://github.com/viviangichuregithub/Code-Challange-3
+-Vivian Gichure
+-Frontend Developer | Project Lead
+-Email: viviangichure@example.com
+-GitHub: https://github.com/viviangichuregithub/Code-Challange-3
