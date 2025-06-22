@@ -106,7 +106,7 @@ header p {
 }
 
 #add-post-form button[type="submit"] {
-  background-color: orange;
+  background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -117,7 +117,7 @@ header p {
 }
 
 #add-post-form button[type="submit"]:hover {
-  background-color:darkorange;
+  background-color:darkgreen;
 }
 
 /*  Main Layout  */
@@ -251,6 +251,22 @@ main.container {
 .delete-btn {
   background-color: #B00020; /* Red */
   color: white;
+}
+
+#cancel-edit-btn {
+  background-color: #B00020; /* orange for warning-like action */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#cancel-edit-btn:hover {
+  background-color: orangered; /* darker orange on hover */
 }
 
 @media (max-width: 1024px) {

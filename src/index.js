@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // DOM Elements 
   const toggleBtn = document.getElementById("toggle-form-btn");
   const formContainer = document.getElementById("add-post-form-container");
   const addPostForm = document.getElementById("add-post-form");
   const display = document.getElementById("dish-display");
   const categoryList = document.getElementById("category-list");
+  const formTitle = document.getElementById("form-title");
+  const submitBtn = document.getElementById("submit-btn");
+  const cancelEditBtn = document.getElementById("cancel-edit-btn");
 
-  // State Variables 
-  let allDishes = []; // Holds all dishes fetched or added
-  const categorySet = new Set(); // Keeps track of unique categories
+  let allDishes = [];
+  const categorySet = new Set();
+  let isEditing = false;
+  let editingDishId = null;
 
-  // TOGGLE FORM VISIBILITY 
   toggleBtn.addEventListener("click", () => {
     const isHidden = formContainer.style.display === "none";
     formContainer.style.display = isHidden ? "block" : "none";
@@ -19,20 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
       ? '<img src="./images/hidden.png" alt="eye closed icon"> Hide Form'
       : '<img src="./images/plus.png" alt="plus icon"> Add New Dish';
 
-       if (isHidden) {
-       setTimeout(() => {
-       const yOffset = -100; // adjust based on your sticky header height
-      const y = formContainer.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-     }, 100);
-  }
+    if (!isEditing) {
+      formTitle.textContent = "Add a New StreetDish";
+      submitBtn.textContent = "Add The StreetDish";
+      cancelEditBtn.style.display = "none";
+    }
+
+    if (isHidden) {
+      setTimeout(() => {
+        const yOffset = -100;
+        const y = formContainer.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }, 100);
+    }
   });
 
-  // FORM SUBMISSION HANDLER 
+  cancelEditBtn.addEventListener("click", () => {
+    isEditing = false;
+    editingDishId = null;
+    addPostForm.reset();
+    formTitle.textContent = "Add a New StreetDish";
+    submitBtn.textContent = "Add The StreetDish";
+    cancelEditBtn.style.display = "none";
+    formContainer.style.display = "none";
+    toggleBtn.innerHTML = '<img src="./images/plus.png" alt="plus icon"> Add New Dish';
+  });
+
   addPostForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Gather form input
     const formData = new FormData(addPostForm);
     const newDish = {
       category: formData.get("category"),
@@ -43,34 +60,47 @@ document.addEventListener("DOMContentLoaded", () => {
       spiceLevel: parseInt(formData.get("spiceLevel")),
     };
 
-    // POST new dish to server
-    fetch("http://localhost:3000/dishes", {
-      method: "POST",
+    const url = isEditing
+      ? `http://localhost:3000/dishes/${editingDishId}`
+      : "http://localhost:3000/dishes";
+    const method = isEditing ? "PATCH" : "POST";
+
+    fetch(url, {
+      method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newDish),
     })
       .then((res) => {
-        if (!res.ok) throw new Error("POST failed");
+        if (!res.ok) throw new Error(`${method} failed`);
         return res.json();
       })
       .then((data) => {
-        alert("Dish added successfully!");
-        addPostForm.reset();
-        formContainer.style.display = "none";
-        toggleBtn.innerHTML =
-          '<img src="./images/plus.png" alt="plus icon"> Add New Dish';
+        if (isEditing) {
+          const index = allDishes.findIndex((dish) => dish.id == editingDishId);
+          allDishes[index] = data;
+          alert("Dish updated successfully!");
+        } else {
+          allDishes.push(data);
+          alert("Dish added successfully!");
+          addDishToSidebarCategory(data.category);
+        }
 
-        allDishes.push(data);
-        addDishToSidebarCategory(data.category);
-        renderDishList(allDishes); // Re-render all with new dish
+        renderDishList(allDishes);
+        addPostForm.reset();
+        isEditing = false;
+        editingDishId = null;
+        formContainer.style.display = "none";
+        toggleBtn.innerHTML = '<img src="./images/plus.png" alt="plus icon"> Add New Dish';
+        formTitle.textContent = "Add a New StreetDish";
+        submitBtn.textContent = "Add The StreetDish";
+        cancelEditBtn.style.display = "none";
       })
       .catch((err) => {
-        console.error("Error adding dish:", err);
-        alert("Error adding dish. Check console or server.");
+        console.error(`${method} error:`, err);
+        alert(`Failed to ${isEditing ? "update" : "add"} dish. Check console.`);
       });
   });
 
-  // ADD CATEGORY TO SIDEBAR (IF NEW) 
   function addDishToSidebarCategory(category) {
     if (!categorySet.has(category)) {
       const li = document.createElement("li");
@@ -82,12 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // RENDER ALL DISHES GROUPED BY CATEGORY 
   function renderDishList(dishes) {
     display.innerHTML = "";
     const categoryMap = {};
 
-    // Group dishes by category
     dishes.forEach((dish) => {
       if (!categoryMap[dish.category]) {
         categoryMap[dish.category] = [];
@@ -95,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
       categoryMap[dish.category].push(dish);
     });
 
-    // For each category, render its section
     Object.keys(categoryMap).forEach((category) => {
       const section = document.createElement("div");
       section.classList.add("category-section");
@@ -107,21 +134,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const grid = document.createElement("div");
       grid.classList.add("dish-grid");
 
-      // Render each dish card inside the grid
       [...categoryMap[category]].reverse().forEach((dish) => {
         const card = document.createElement("div");
         card.classList.add("dish-card");
 
-        // Determine spice image(s)
-      let spiceImage = "";
-      if (dish.spiceLevel === 0) {
-       spiceImage = `<img src="./images/candy.png" alt="Sweet" class="spice-icon" />`;
-      } else {
-      spiceImage = `<img src="./images/chilli.png" alt="pepper" class="spice-icon" />`.repeat(dish.spiceLevel);
-   }
+        const spiceImage = dish.spiceLevel === 0
+          ? `<img src="./images/candy.png" alt="Sweet" class="spice-icon" />`
+          : `<img src="./images/chilli.png" alt="pepper" class="spice-icon" />`.repeat(dish.spiceLevel);
 
-
-        // Image on top, then text info below
         card.innerHTML = `
           <img src="${dish.imageUrl}" alt="${dish.name}" class="dish-img"/>
           <div class="dish-info">
@@ -129,13 +149,12 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Origin:</strong> ${dish.origin}</p>
             <p><strong>Flavor Intensity :</strong> ${spiceImage}</p>
             <p>${dish.description}</p>
-           <div class="card-buttons">
-           <button class="edit-btn" data-id="${dish.id}">Edit</button>
-           <button class="delete-btn" data-id="${dish.id}">Delete</button>
-           </div>
+            <div class="card-buttons">
+              <button class="edit-btn" data-id="${dish.id}">Edit</button>
+              <button class="delete-btn" data-id="${dish.id}">Delete</button>
+            </div>
           </div>
         `;
-
         grid.appendChild(card);
       });
 
@@ -144,9 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
-   // ✅ DELETE HANDLER inside DOMContentLoaded
   document.addEventListener("click", (e) => {
+    // DELETE
     if (e.target.classList.contains("delete-btn")) {
       const dishId = e.target.dataset.id;
 
@@ -155,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
           method: "DELETE",
         })
           .then((res) => {
-            if (res.status === 200 || res.status === 204) {
+            if (res.ok) {
               allDishes = allDishes.filter((dish) => dish.id != dishId);
               renderDishList(allDishes);
               alert("Dish deleted successfully!");
@@ -169,33 +187,58 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
     }
+
+    // EDIT
+    if (e.target.classList.contains("edit-btn")) {
+      const dishId = e.target.dataset.id;
+      const dishToEdit = allDishes.find((dish) => dish.id == dishId);
+
+      if (dishToEdit) {
+        addPostForm.category.value = dishToEdit.category;
+        addPostForm.name.value = dishToEdit.name;
+        addPostForm.origin.value = dishToEdit.origin;
+        addPostForm.imageUrl.value = dishToEdit.imageUrl;
+        addPostForm.description.value = dishToEdit.description;
+        addPostForm.spiceLevel.value = dishToEdit.spiceLevel;
+
+        isEditing = true;
+        editingDishId = dishId;
+
+        formContainer.style.display = "block";
+        formTitle.textContent = "Update Dish";
+        submitBtn.textContent = "Update StreetDish";
+        cancelEditBtn.style.display = "inline-block";
+        toggleBtn.innerHTML = '<img src="./images/hidden.png" alt="eye closed icon"> Hide Form';
+
+        setTimeout(() => {
+          const yOffset = -100;
+          const y = formContainer.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }, 100);
+      }
+    }
   });
 
-  // FILTER DISHES BY A SPECIFIC CATEGORY 
   function filterDishesByCategory(category) {
     const filtered = allDishes.filter((dish) => dish.category === category);
     renderDishList(filtered);
   }
 
-  // INITIAL DISH FETCH FROM JSON SERVER 
   fetch("http://localhost:3000/dishes")
     .then((res) => res.json())
     .then((data) => {
       allDishes = data;
       renderDishList(allDishes);
 
-      // Add existing categories to sidebar
-      allDishes.forEach((dish) => {
-        addDishToSidebarCategory(dish.category);
-      });
+      allDishes.forEach((dish) => addDishToSidebarCategory(dish.category));
 
-      // Add "All" button to show everything
       const allBtn = document.createElement("li");
       allBtn.textContent = "All";
       allBtn.classList.add("category-item");
       allBtn.addEventListener("click", () => renderDishList(allDishes));
       categoryList.prepend(allBtn);
     });
+
 });
 
 

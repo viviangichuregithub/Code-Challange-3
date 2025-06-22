@@ -6,7 +6,7 @@
       "name": "Bubble Tea",
       "origin": "Taiwan",
       "imageUrl": "https://plus.unsplash.com/premium_photo-1664298216218-ff8dfd7719ac?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnViYmxlJTIwdGVhfGVufDB8fDB8fHww",
-      "description": "Sweet tea with chewy tapioca pearls, served cold.",
+      "description": "Sweet tea with chewy tapioca pearls,served cold.",
       "spiceLevel": 0
     },
     {
@@ -82,15 +82,6 @@
       "spiceLevel": 0
     },
     {
-      "id": "0bb2",
-      "category": "Drinks",
-      "name": "Ukwaju ",
-      "origin": "Kenya",
-      "imageUrl": "https://img-global.cpcdn.com/recipes/6b59b6ca0bee179f/1360x1928cq90/tamarind-juice-ukwaju-recipe-main-photo.webp",
-      "description": "It is a smothie made from ukwaju plant",
-      "spiceLevel": 0
-    },
-    {
       "id": "6a19",
       "category": "Meat Dishes",
       "name": "Tacos al Pastor",
@@ -134,6 +125,78 @@
       "imageUrl": "https://www.seriouseats.com/thmb/T4vpRnJBtEm1S4vbVFHlO8671cw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/caldo-verde-portuguese-potato-kale-soup-recipe-hero-04-80f8258a58694f78a7ad6629ba55f90e.jpg",
       "description": "Potato and Kale Soup With Sausage",
       "spiceLevel": 1
+    },
+    {
+      "id": "d22a",
+      "category": "Drinks",
+      "name": "Ukwaju",
+      "origin": "kenya",
+      "imageUrl": "https://www.healthshots.com/healthshots/en/uploads/2023/09/23111537/TAMARIND.jpg",
+      "description": "A refreshing and tangy beverage made from the pulp of the tamarind fruit.",
+      "spiceLevel": 0
+    },
+    {
+      "id": "0243",
+      "category": "Snacks",
+      "name": "Smocha",
+      "origin": "kenya",
+      "imageUrl": "https://nakuru.mtaawangu.co.ke/_next/image?url=https%3A%2F%2Flocal.nation.co.ke%2Fresource%2Fblob%2F4347944%2F3c47c6d6c65599adbe8c331fbbc6a6f1%2Fsmocha-2-data.jpg&w=1920&q=75",
+      "description": "A wrap that contains a smokie/sausage on the inside with kachumbari and sauces, all folded up using a chapati.",
+      "spiceLevel": 1
+    },
+    {
+      "id": "d299",
+      "category": "Other",
+      "name": " Pretzels",
+      "origin": "USA",
+      "imageUrl": "https://sallysbakingaddiction.com/wp-content/uploads/2017/04/soft-pretzels-3.jpg",
+      "description": "Type of a baked pastry made from dough that is commonly shaped into a knot.",
+      "spiceLevel": 0
+    },
+    {
+      "id": "ff7d",
+      "category": "Drinks",
+      "name": "Russian kvas",
+      "origin": "Russia",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/2463/6105/files/Kvass.jpg?v=1567784520",
+      "description": "Fermented Slavic beverage made from rye bread.",
+      "spiceLevel": 1
+    },
+    {
+      "id": "458b",
+      "category": "Drinks",
+      "name": "Mijui",
+      "origin": "China",
+      "imageUrl": "https://www.tastingtable.com/img/gallery/mijiu-is-the-chinese-rice-wine-you-should-be-cooking-with/intro-1697533128.webp",
+      "description": "Chinese alcoholic beverage made from fermented glutinous rice.",
+      "spiceLevel": 2
+    },
+    {
+      "id": "c2c6",
+      "category": "Other",
+      "name": "Maori bread (rēwena parāoa)",
+      "origin": "New Zealand",
+      "imageUrl": "https://d2mkh7ukbp9xav.cloudfront.net/recipeimage/rwzp2049-71c0e-961025-cfcd2-vm2fzvzd/d59ca992-ae87-4eaa-a793-5391fb213d5e/main/paraoa-maori-bread.jpg",
+      "description": "Its made from boiling and mashing potatoes, then adding flour and sugar.",
+      "spiceLevel": 0
+    },
+    {
+      "id": "ff03",
+      "category": "Meat Dishes",
+      "name": "Barbacoa",
+      "origin": "Mexico",
+      "imageUrl": "https://thebigmansworld.com/wp-content/uploads/2024/11/beef-barbacoa.jpg",
+      "description": "Meat was slow-cooked in an underground pit or over an open fire. ",
+      "spiceLevel": 1
+    },
+    {
+      "id": "4393",
+      "category": "Snacks",
+      "name": "Ugandan Rolex",
+      "origin": "Uganda",
+      "imageUrl": "https://fabwoman.ng/wp-content/uploads/2023/09/rolex-eggs.png",
+      "description": "A popular food item in Uganda prepared by combining an egg omelette and vegetables wrapped in a chapati.",
+      "spiceLevel": 0
     }
   ]
 }

@@ -24,26 +24,29 @@
 
   <!-- Add Dish Form (hidden by default, toggle with button) -->
   <section id="add-post-form-container" style="display: none;">
-    <h3><em>Add a New StreetDish</em></h3>
-    <form id="add-post-form">
-      <select name="category" required>
-        <option value="" disabled selected>--Select Category--</option>
-        <option value="Snacks">Snacks</option>
-        <option value="Drinks">Drinks</option>
-        <option value="Meat Dishes">Meat Dishes</option>
-        <option value="Vegetarian">Vegetarian</option>
-        <option value="Desserts">Desserts</option>
-        <option value="Other">Other</option>
-      </select>
-      <input type="text" name="name" placeholder="Dish Name" required />
-      <input type="text" name="origin" placeholder="Country of Origin" required />
-      <input type="url" name="imageUrl" placeholder="Image URL" required />
-      <textarea name="description" rows="4" placeholder="Describe the dish..." required></textarea>
-      <label for="spiceLevel">Spice Level (1-5) and If Sweet Input (0) : </label>
-      <input type="number" name="spiceLevel" min="0" max="5" required />
-      <button type="submit">Add The StreetDish</button>
-    </form>
-  </section>
+  <h3 id="form-title"><em>Add a New StreetDish</em></h3>
+  <form id="add-post-form">
+    <select name="category" required>
+      <option value="" disabled selected>--Select Category--</option>
+      <option value="Snacks">Snacks</option>
+      <option value="Drinks">Drinks</option>
+      <option value="Meat Dishes">Meat Dishes</option>
+      <option value="Vegetarian">Vegetarian</option>
+      <option value="Desserts">Desserts</option>
+      <option value="Other">Other</option>
+    </select>
+    <input type="text" name="name" placeholder="Dish Name" required />
+    <input type="text" name="origin" placeholder="Country of Origin" required />
+    <input type="url" name="imageUrl" placeholder="Image URL" required />
+    <textarea name="description" rows="4" placeholder="Describe the dish..." required></textarea>
+    <label for="spiceLevel">Spice Level (1-5) and If Sweet Input (0) : </label>
+    <input type="number" name="spiceLevel" min="0" max="5" required />
+    
+    <!-- Updated IDs here -->
+    <button type="submit" id="submit-btn">Add The StreetDish</button>
+    <button type="button" id="cancel-edit-btn" style="display: none;">Cancel Edit</button>
+  </form>
+</section>
 
   <!-- Main Content Container -->
   <main class="container">
